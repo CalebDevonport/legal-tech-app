@@ -52,7 +52,6 @@
       <div>
         <mat-form-field>
           <input matInput type="text" digitOnly minLength="6" maxLength="6" id="sraID" placeholder="SRA ID" required [(ngModel)]="model.sraID" name="sraID" #sraID="ngModel">
-          {{model.sraID}}
           <div [hidden]="sraID.valid || sraID.pristine"
             class="alert alert-danger" style="color: white">
             SRA ID is required

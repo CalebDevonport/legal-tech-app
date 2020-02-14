@@ -14,19 +14,14 @@ export class AdvisorRegistrationComponent {
 
   advisorList: Advisor[] = [];
 
-  model = new Advisor(1, '', '', '', '', UserType.Advisor, 0);
+  model = new Advisor(1, '', '', '', '', UserType.Advisor, null);
 
   constructor() { }
 
-  get diagnostic() { return this.model; }
-
   onSubmit() {
-    console.log(this.diagnostic);
     this.advisorList.push(this.model);
-    console.log(this.advisorList);
     const newClientNum = this.advisorList.sort()[this.advisorList.length - 1].id + 1;
     this.model = new Advisor(newClientNum, '', '', '', '', UserType.Advisor, 0);
-    console.log(this.diagnostic);
     this.advisorForm.resetForm(this.model);
   }
 
