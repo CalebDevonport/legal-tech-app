@@ -1,0 +1,31 @@
+.img {
+  width: 99%;
+}
+.container {
+  min-height: 100%;
+  min-width: 100%;
+}
+.search-form {
+  min-width: 100%;
+}
+
+.textArea {
+  text-align: center;
+  margin: 20%;
+}
+
+.mat-card{
+  background-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.mat-form-field {
+  margin: 5px;
+}
+
+.mat-raised-button {
+  width: 90%;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}

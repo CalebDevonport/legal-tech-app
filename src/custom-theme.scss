@@ -1,0 +1,96 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$md-mcgpalette0: (
+    50 : #faf8f1,
+    100 : #f3eedd,
+    200 : #ebe2c6,
+    300 : #e3d6af,
+    400 : #ddce9e,
+    500 : #d7c58d,
+    600 : #d3bf85,
+    700 : #cdb87a,
+    800 : #c7b070,
+    900 : #bea35d,
+    A100 : #ffffff,
+    A200 : #fffcf5,
+    A400 : #ffeec2,
+    A700 : #ffe7a8,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$md-mcgpalette1: (
+    50 : #f8f8f8,
+    100 : #ededed,
+    200 : #e1e1e1,
+    300 : #d4d4d4,
+    400 : #cbcbcb,
+    500 : #c2c2c2,
+    600 : #bcbcbc,
+    700 : #b4b4b4,
+    800 : #acacac,
+    900 : #9f9f9f,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffe0e0,
+    A700 : #ffc7c7,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+
+$legal-tech-app-primary: mat-palette($md-mcgpalette0);
+$legal-tech-app-accent: mat-palette($md-mcgpalette1);
+
+// The warn palette is optional (defaults to red).
+$legal-tech-app-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$legal-tech-app-theme: mat-light-theme($legal-tech-app-primary, $legal-tech-app-accent, $legal-tech-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($legal-tech-app-theme);
+

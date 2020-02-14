@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%;}
+html { background-color: #13123c; }
+h1, h2, h3, h4, h5, h6, p { color: white; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.mat-form-field-label {
+  color:white !important;
+}
+
+input.mat-input-element {
+  color: white;
+}
+
+.mat-form-field-underline {
+  background-color:white !important;
+}
