@@ -14,6 +14,7 @@ import { RegisterComponent } from './register/register.component';
 import { ClientRegistrationComponent } from './client-registration/client-registration.component';
 import { FormsModule } from '@angular/forms';
 import { AdvisorRegistrationComponent } from './advisor-registration/advisor-registration.component';
+import { DigitOnlyModule } from '@uiowa/digit-only';
 
 const appRoutes: Routes = [
   { path: '',
@@ -35,6 +36,10 @@ const appRoutes: Routes = [
   {
     path: 'register/client',
     component: ClientRegistrationComponent
+  },
+  {
+    path: 'register/advisor',
+    component: AdvisorRegistrationComponent
   }
 ];
 
@@ -59,7 +64,8 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    DigitOnlyModule
   ],
   providers: [],
   bootstrap: [AppComponent]

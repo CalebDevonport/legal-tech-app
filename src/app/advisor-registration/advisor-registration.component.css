@@ -1,0 +1,13 @@
+.container {
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.textArea {
+  text-align: center;
+  margin: 20%;
+}
+
+.mat-form-field {
+  margin: 5px;
+}

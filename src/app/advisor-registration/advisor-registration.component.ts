@@ -1,35 +1,33 @@
+import { Advisor } from './../user/advisor';
 import { UserType } from './../user/user-types';
-import { User } from './../user/user';
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-advisor-registration',
   templateUrl: './advisor-registration.component.html',
   styleUrls: ['./advisor-registration.component.css']
 })
-export class AdvisorRegistrationComponent implements OnInit {
+export class AdvisorRegistrationComponent {
 
-  advisorList: User[] = [];
+  @ViewChild('advisorForm') public advisorForm: NgForm;
 
-  model = new User(1, '', '', '', '', UserType.Advisor);
+  advisorList: Advisor[] = [];
 
-  submitted = false;
+  model = new Advisor(1, '', '', '', '', UserType.Advisor, 0);
+
+  constructor() { }
+
+  get diagnostic() { return this.model; }
 
   onSubmit() {
-    this.submitted = true;
     console.log(this.diagnostic);
     this.advisorList.push(this.model);
     console.log(this.advisorList);
     const newClientNum = this.advisorList.sort()[this.advisorList.length - 1].id + 1;
-    this.model = new User(newClientNum, '', '', '', '', UserType.Client);
+    this.model = new Advisor(newClientNum, '', '', '', '', UserType.Advisor, 0);
     console.log(this.diagnostic);
+    this.advisorForm.resetForm(this.model);
   }
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  get diagnostic() { return JSON.stringify(this.model); }
 
 }

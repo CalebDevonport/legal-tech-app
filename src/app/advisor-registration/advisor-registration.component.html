@@ -1,1 +1,67 @@
-<p>advisor-registration works!</p>
+<h2 style="text-align: center; margin-top: 5px;">Please enter your details</h2>
+<form (ngSubmit)="onSubmit()" #advisorForm="ngForm">
+  <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.5%" fxLayoutAlign="center center">
+    <div class="textArea" fxFlex fxFlexAlign="center" fxFlexFill>
+      <div>
+        <mat-form-field>
+          <input matInput id="FirstName" placeholder="First Name" required [(ngModel)]="model.firstName" name="firstName" #firstName="ngModel">
+          <div [hidden]="firstName.valid || firstName.pristine"
+            class="alert alert-danger" style="color: white">
+            First name is required
+          </div>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput id="LastName" placeholder="Last Name" required [(ngModel)]="model.lastName" name="lastName" #lastName="ngModel">
+          <div [hidden]="lastName.valid || lastName.pristine"
+            class="alert alert-danger" style="color: white">
+            Last name is required
+          </div>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput id="EmailAddress" placeholder="Email Address" required [(ngModel)]="model.emailAddress" name="emailAddress" #emailAddress="ngModel">
+          <div [hidden]="emailAddress.valid || emailAddress.pristine"
+            class="alert alert-danger" style="color: white">
+            Email address is required
+          </div>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput type="text" digitOnly maxLength="11" id="PhoneNumber" placeholder="Phone Number" [(ngModel)]="model.phoneNumber" name="phoneNumber">
+          {{model.phoneNumber}}
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput type="password" id="Password"  placeholder="Password" required [(ngModel)]="model.password" name="password" #password="ngModel">
+          <div [hidden]="password.valid || password.pristine"
+            class="alert alert-danger" style="color: white">
+            Password is required
+          </div>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput type="text" digitOnly minLength="6" maxLength="6" id="sraID" placeholder="SRA ID" required [(ngModel)]="model.sraID" name="sraID" #sraID="ngModel">
+          {{model.sraID}}
+          <div [hidden]="sraID.valid || sraID.pristine"
+            class="alert alert-danger" style="color: white">
+            SRA ID is required
+          </div>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxFlex fxFlexAlign="center">
+      <button type="submit" mat-raised-button color="primary" [disabled]="!advisorForm.form.valid">Create Account</button>
+    </div>
+  </div>
+</form>

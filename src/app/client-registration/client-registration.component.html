@@ -4,39 +4,48 @@
   <div class="textArea" fxFlex fxFlexAlign="center" fxFlexFill>
       <div>
         <mat-form-field>
-          <input id="FirstName" matInput placeholder="First Name" required [(ngModel)]="model.firstName" name="firstName" #firstName="ngModel">
+          <input matInput id="FirstName" placeholder="First Name" required [(ngModel)]="model.firstName" name="firstName" #firstName="ngModel">
           <div [hidden]="firstName.valid || firstName.pristine"
             class="alert alert-danger" style="color: white">
-            Name is required
+            First name is required
           </div>
         </mat-form-field>
       </div>
 
       <div>
         <mat-form-field>
-          <input id="LastName" matInput placeholder="Last Name" required [(ngModel)]="model.lastName" name="lastName">
-          {{model.lastName}}
+          <input matInput id="LastName" placeholder="Last Name" required [(ngModel)]="model.lastName" name="lastName" #lastName="ngModel">
+          <div [hidden]="lastName.valid || lastName.pristine"
+            class="alert alert-danger" style="color: white">
+            Last name is required
+          </div>
         </mat-form-field>
       </div>
 
       <div>
         <mat-form-field>
-          <input id="EmailAddress" matInput placeholder="Email Address" required [(ngModel)]="model.emailAddress" name="emailAddress">
-          {{model.emailAddress}}
+          <input matInput id="EmailAddress"  placeholder="Email Address" required [(ngModel)]="model.emailAddress" name="emailAddress" #emailAddress="ngModel">
+          <div [hidden]="emailAddress.valid || emailAddress.pristine"
+            class="alert alert-danger" style="color: white">
+            Email address is required
+          </div>
         </mat-form-field>
       </div>
 
       <div>
         <mat-form-field>
-          <input id="PhoneNumber" type="number" matInput placeholder="Phone Number" [(ngModel)]="model.phoneNumber" name="phoneNumber">
+          <input matInput type="text" digitOnly maxLength="11" id="PhoneNumber" placeholder="Phone Number" [(ngModel)]="model.phoneNumber" name="phoneNumber">
           {{model.phoneNumber}}
         </mat-form-field>
       </div>
 
       <div>
         <mat-form-field>
-          <input id="Password" type="password" matInput placeholder="Password" required [(ngModel)]="model.password" name="password">
-          {{model.password}}
+          <input matInput type="password" id="Password" placeholder="Password" required [(ngModel)]="model.password" name="password" #password="ngModel">
+          <div [hidden]="password.valid || password.pristine"
+            class="alert alert-danger" style="color: white">
+            Password is required
+          </div>
         </mat-form-field>
       </div>
 

@@ -1,35 +1,27 @@
 import { UserType } from './../user/user-types';
 import { User } from './../user/user';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-client-registration',
   templateUrl: './client-registration.component.html',
   styleUrls: ['./client-registration.component.css']
 })
-export class ClientRegistrationComponent implements OnInit {
+export class ClientRegistrationComponent {
+
+  @ViewChild('clientForm') public clientForm: NgForm;
 
   clientList: User[] = [];
 
   model = new User(1, '', '', '', '', UserType.Client);
 
-  submitted = false;
-
-  onSubmit() {
-    this.submitted = true;
-    console.log(this.diagnostic);
-    this.clientList.push(this.model);
-    console.log(this.clientList);
-    const newClientNum = this.clientList.sort()[this.clientList.length - 1].id + 1;
-    this.model = new User(newClientNum, '', '', '', '', UserType.Client);
-    console.log(this.diagnostic);
-  }
-
   constructor() { }
 
-  ngOnInit(): void {
+  onSubmit() {
+    this.clientList.push(this.model);
+    const newClientNum = this.clientList.sort()[this.clientList.length - 1].id + 1;
+    this.model = new User(newClientNum, '', '', '', '', UserType.Client);
+    this.clientForm.resetForm(this.model);
   }
-
-  get diagnostic() { return JSON.stringify(this.model); }
-
 }
