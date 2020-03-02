@@ -1,5 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+@import 'custom-theme.scss';
+
+
+
 html, body { height: 100%;}
 html { background-color: #13123c; }
 h1, h2, h3, h4, h5, h6, p { color: white; }
@@ -16,4 +24,14 @@ input.mat-input-element {
 
 .mat-form-field-underline {
   background-color:white !important;
+}
+
+.mat-card {
+  background: mat-color($legal-tech-app-primary);
+  color: white;
+}
+
+.mat-divider {
+  border-top-color: mat-color($legal-tech-app-primary);
+  margin-bottom: 5px;
 }

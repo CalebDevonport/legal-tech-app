@@ -12,6 +12,8 @@ export class ClientRegistrationComponent {
 
   @ViewChild('clientForm') public clientForm: NgForm;
 
+  formSubmitted = false;
+
   clientList: User[] = [];
 
   model = new User(1, '', '', '', '', UserType.Client);
@@ -23,5 +25,6 @@ export class ClientRegistrationComponent {
     const newClientNum = this.clientList.sort()[this.clientList.length - 1].id + 1;
     this.model = new User(newClientNum, '', '', '', '', UserType.Client);
     this.clientForm.resetForm(this.model);
+    this.formSubmitted = true;
   }
 }

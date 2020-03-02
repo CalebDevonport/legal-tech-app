@@ -1,0 +1,35 @@
+<div *ngIf="!firstQuestionAnswered">
+  <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.5%" fxLayoutAlign="center center">
+    <h2 style="text-align: center; margin-top: 5px;">What area of family law are you interested in?</h2>
+    <div fxFill fxFlexAlign="center" style="text-align: center;">
+      <button class="button" mat-raised-button color="primary" (click)="onClick()">Divorce</button>
+      <div></div>
+      <button class="button" mat-raised-button color="primary" (click)="onClick()">Separation</button>
+      <div></div>
+      <button class="button" mat-raised-button color="primary" (click)="onClick()">Child custody</button>
+      <div></div>
+      <button class="button" mat-raised-button color="primary" (click)="onClick()">Marriage</button>
+      <div></div>
+      <button class="button" mat-raised-button color="primary" (click)="onClick()">Adoption</button>
+      <div></div>
+      <button class="button" mat-raised-button color="primary" (click)="onClick()">Domestic violence</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="firstQuestionAnswered">
+  <h2 style="text-align: center; margin-top: 5px;">What are your grounds for divorce?</h2>
+  <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.5%" fxLayoutAlign="center center">
+    <div fxFlex fxFlexAlign="center" style="text-align: center;">
+      <button class="button" mat-raised-button color="primary" (click)="onClick()">Adultery</button>
+      <div></div>
+      <button class="button" mat-raised-button color="primary" (click)="onClick()">Unreasonable behaviour</button>
+      <div></div>
+      <button class="button" mat-raised-button color="primary" (click)="onClick()">Desertion</button>
+      <div></div>
+      <button class="button" mat-raised-button color="primary" (click)="onClick()">2 year separation</button>
+      <div></div>
+      <button class="button" mat-raised-button color="primary" (click)="onClick()">5 year separation</button>
+    </div>
+  </div>
+</div>

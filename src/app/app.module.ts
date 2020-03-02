@@ -10,11 +10,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatDividerModule } from '@angular/material/divider';
 import { RegisterComponent } from './register/register.component';
 import { ClientRegistrationComponent } from './client-registration/client-registration.component';
 import { FormsModule } from '@angular/forms';
 import { AdvisorRegistrationComponent } from './advisor-registration/advisor-registration.component';
 import { DigitOnlyModule } from '@uiowa/digit-only';
+import { MessageSelectorComponent } from './message-selector/message-selector.component';
+import { NewCaseComponent } from './new-case/new-case.component';
 
 const appRoutes: Routes = [
   { path: '',
@@ -40,6 +43,14 @@ const appRoutes: Routes = [
   {
     path: 'register/advisor',
     component: AdvisorRegistrationComponent
+  },
+  {
+    path: 'messages',
+    component: MessageSelectorComponent
+  },
+  {
+    path: 'newCase',
+    component: NewCaseComponent
   }
 ];
 
@@ -49,7 +60,9 @@ const appRoutes: Routes = [
     LoginComponent,
     RegisterComponent,
     ClientRegistrationComponent,
-    AdvisorRegistrationComponent
+    AdvisorRegistrationComponent,
+    MessageSelectorComponent,
+    NewCaseComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -65,6 +78,8 @@ const appRoutes: Routes = [
     MatButtonModule,
     MatInputModule,
     FormsModule,
+    MatCardModule,
+    MatDividerModule,
     DigitOnlyModule
   ],
   providers: [],

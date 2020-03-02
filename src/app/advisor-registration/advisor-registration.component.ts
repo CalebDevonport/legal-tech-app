@@ -12,6 +12,8 @@ export class AdvisorRegistrationComponent {
 
   @ViewChild('advisorForm') public advisorForm: NgForm;
 
+  formSubmitted = false;
+
   advisorList: Advisor[] = [];
 
   model = new Advisor(1, '', '', '', '', UserType.Advisor, null);
@@ -21,8 +23,9 @@ export class AdvisorRegistrationComponent {
   onSubmit() {
     this.advisorList.push(this.model);
     const newClientNum = this.advisorList.sort()[this.advisorList.length - 1].id + 1;
-    this.model = new Advisor(newClientNum, '', '', '', '', UserType.Advisor, 0);
+    this.model = new Advisor(newClientNum, '', '', '', '', UserType.Advisor, null);
     this.advisorForm.resetForm(this.model);
+    this.formSubmitted = true;
   }
 
 }
