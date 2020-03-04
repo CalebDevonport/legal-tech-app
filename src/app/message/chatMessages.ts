@@ -1,45 +1,54 @@
 const firstPerson = 'Lawyer';
-const secondPerson = 'Donald';
+const secondPerson = 'Debbie';
 
 export const chatMessages = [
   {
-    message : 'Hi',
+    message : 'Hello Debbie.',
     name: firstPerson,
     time : '12:13'
   },
   {
-    message : 'Hi' + firstPerson,
+    message : 'Hello',
     name : secondPerson,
     time : '12:13'
   },
   {
-    message : 'Whats up',
+    message : 'So I\'ve read through your case summary, and I\'ve just got a few questions.',
     name: firstPerson,
     time : '12:13'
   },
   {
-    message : 'Not much, you?',
+    message : 'What questions?',
     name: secondPerson,
     time : '12:13'
   },
   {
-    message : 'Learning how to use angular',
+    message : 'So when specifically did your ex move out?',
     name: firstPerson,
     time : '12:13'
   },
   {
-    message : 'Wow',
+    message : 'It\'s been a couple of weeks now :(',
     name: secondPerson,
     time : '12:13'
   },
   {
-    message : 'That sounds well cool, are there any good resources online that I can use to do that? This is a long message isn\'t it,' +
-      'i wonder how this will look.',
+    message : 'I\'m convinced he\'s seeing someone else, but I don\'t have any proof',
     name: secondPerson,
     time : '12:13'
   },
   {
-    message : 'Yeah it\'s very cool, I made this chat app with it!',
+    message : 'Okay I understand that.',
+    name: firstPerson,
+    time : '12:13'
+  },
+  {
+    message : 'So the problem is that you don\'t currently meet any of the five grounds for divorce.',
+    name: firstPerson,
+    time : '12:13'
+  },
+  {
+    message : 'Is there any information you have at all that could prove that he\'s been adulterous?',
     name: firstPerson,
     time : '12:13'
   }

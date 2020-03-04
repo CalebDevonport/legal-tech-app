@@ -36,7 +36,6 @@
         <div>
           <mat-form-field>
             <input matInput type="text" digitOnly maxLength="11" id="PhoneNumber" placeholder="Phone Number" [(ngModel)]="model.phoneNumber" name="phoneNumber">
-            {{model.phoneNumber}}
           </mat-form-field>
         </div>
 
@@ -49,13 +48,6 @@
             </div>
           </mat-form-field>
         </div>
-
-        <!-- <div>
-          <mat-form-field>
-            <input id="ConfirmPassword" matInput placeholder="Confirm Password" required [(ngModel)]="model.confirmPassword" name="confirmPassword">
-            {{model.confirmPassword}}
-          </mat-form-field>
-        </div> -->
       </div>
       <div fxFlex fxFlexAlign="center">
         <button type="submit" mat-raised-button color="primary" [disabled]="!clientForm.form.valid">Create Account</button>

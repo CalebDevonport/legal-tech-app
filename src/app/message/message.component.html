@@ -3,7 +3,7 @@
   <h2 style="text-align: center; margin-top: 15px;">Your messages</h2>
 
   <div fxFill class="messageArea" #scrollMe [scrollTop]="scrollMe.scrollHeight">
-    <mat-card class="card message" [ngClass]="{'theirMessage': message.name == 'Lawyer', 'myMessage': message.name == 'Donald'}"  *ngFor="let message of messages">
+    <mat-card class="card message" [ngClass]="{'theirMessage': message.name == 'Callum', 'myMessage': message.name == 'Lawyer'}"  *ngFor="let message of messages">
       <mat-card-content class="content">
       <p>{{ message.message }}</p>
       </mat-card-content>

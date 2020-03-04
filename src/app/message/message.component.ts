@@ -13,7 +13,7 @@ export class MessageComponent implements OnInit {
   @ViewChild('messageForm') public messageForm: NgForm;
 
   messages = [];
-  name = 'Donald';
+  name = 'Lawyer';
 
   model = {
     message: ''
@@ -46,8 +46,8 @@ export class MessageComponent implements OnInit {
     this.changeDetectorRef.detectChanges();
 
     data = {
-      message: 'this is a good reply probs',
-      name: 'Lawyer',
+      message: 'I\'ll have a think and get back to you, thanks for your help!',
+      name: 'Debbie',
       time : date.getHours() + ':' + (date.getMinutes() < 10 ? '0' : '') + date.getMinutes()
     };
 

@@ -30,9 +30,9 @@ export class LoginComponent implements OnInit {
       password: ''
     };
 
-    if (this.loginForm.form.get('emailAddress').value === this.advisor) {
+    if (this.loginForm.form.get('emailAddress').value.toLowerCase() === this.advisor) {
       this.router.navigate(['/messages/advisor']);
-    } else if (this.loginForm.form.get('emailAddress').value === this.client) {
+    } else if (this.loginForm.form.get('emailAddress').value.toLowerCase() === this.client) {
       this.router.navigate(['/messages/client']);
     }
 
