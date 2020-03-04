@@ -8,13 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class NewCaseComponent implements OnInit {
 
   firstQuestionAnswered = false;
+  secondQuestionAnswered = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onClick(){
+  onFirstClick() {
     this.firstQuestionAnswered = true;
+  }
+
+  onSecondClick() {
+    this.secondQuestionAnswered = true;
   }
 }

@@ -1,37 +1,50 @@
 
 <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.5%" fxLayoutAlign="center center">
-  <h2 style="text-align: center; margin-top: 15px;">Your messages</h2>
+  <h2 fxFlex="0 1 100%" style="text-align: center; margin-top: 15px;">Your messages</h2>
 
-  <div fxFill>
-    <mat-card routerLink="/login" color="primary" class="card">
+  <div fxFlex *ngIf="typeVal == 'advisor'">
+    <mat-card routerLink="/message" color="primary" class="card">
       <mat-card-header>
-          <mat-card-title>Lawyer Lawyerman</mat-card-title>
-          <mat-card-subtitle>Divorce</mat-card-subtitle>
+          <mat-card-title>Callum Smith</mat-card-title>
+          <mat-card-subtitle>Child Custody</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <h3 style = "white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Lawyer: So I've read through your case summary and I have a few questions</h3>
+        <p class="content">You: So I've read through your case summary and I have a few questions</p>
       </mat-card-content>
     </mat-card>
-    <mat-card routerLink="/login" color="primary" class="card">
+    <mat-card routerLink="/message" color="primary" class="card">
       <mat-card-header>
-          <mat-card-title>Lawyer Lawyerman</mat-card-title>
-          <mat-card-subtitle>Divorce</mat-card-subtitle>
+          <mat-card-title>Jessica Davies</mat-card-title>
+          <mat-card-subtitle>Domestic violence</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <h3 style = "white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Lawyer: So I've read through your case summary and I have a few questions</h3>
+        <p class="content">Jessica: I'm just not sure what the best course of action is going forward</p>
       </mat-card-content>
-    </mat-card><mat-card routerLink="/login" color="primary" class="card">
+    </mat-card>
+    <mat-card routerLink="/message" color="primary" class="card">
       <mat-card-header>
-          <mat-card-title>Lawyer Lawyerman</mat-card-title>
+          <mat-card-title>Debbie Unsworth</mat-card-title>
           <mat-card-subtitle>Divorce</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <h3 style = "white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Lawyer: So I've read through your case summary and I have a few questions</h3>
+        <p class="content">Debbie: How am I supposed to divorce him if I don't meet any of the grounds?</p>
       </mat-card-content>
     </mat-card>
   </div>
 
-  <div fxFlex fxLayoutAlign="center end" style="text-align: center;">
+  <div fxFlex *ngIf="typeVal == 'clientPending'">
+    <mat-card routerLink="/message" color="primary" class="card">
+      <mat-card-header>
+          <mat-card-title>Debbie Unsworth</mat-card-title>
+          <mat-card-subtitle>Divorce</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Your case is waiting to be assigned to a lawyer. Once your lawyer has been assigned they will be sent your case summary and contact you.</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div fxFlex fxLayoutAlign="center end" style="text-align: center;" *ngIf="typeVal == 'client' || typeVal =='clientPending'">
     <button class="button" type="submit" mat-raised-button color="primary" routerLink="/newCase">New case</button>
   </div>
 </div>

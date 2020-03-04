@@ -1,23 +1,35 @@
-<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.5%" fxLayoutAlign="center center">
-  <div fxFlex fxFlexAlign="center">
-    <img mat-card-image class="img" src="assets\img\Logo-big.png">
-  </div>
-  <div class="textArea" fxFlex fxFlexAlign="center" fxFlexFill>
-    <div>
-      <mat-form-field>
-        <input matInput placeholder="Email Address">
-      </mat-form-field>
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+  <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.5%" fxLayoutAlign="center center">
+    <div fxFlex fxFlexAlign="center">
+      <img mat-card-image class="img" src="assets\img\Logo-big.png">
     </div>
 
-    <div>
-      <mat-form-field>
-        <input type="password" matInput placeholder="Password">
-      </mat-form-field>
+    <div class="textArea" fxFlex fxFlexAlign="center">
+      <div>
+        <mat-form-field>
+          <input matInput id="EmailAddress"  placeholder="Email Address" required [(ngModel)]="model.emailAddress" name="emailAddress" #emailAddress="ngModel">
+            <div [hidden]="emailAddress.valid || emailAddress.pristine"
+              class="alert alert-danger" style="color: white">
+              Email address is required
+            </div>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput type="password" id="Password" placeholder="Password" required [(ngModel)]="model.password" name="password" #password="ngModel">
+            <div [hidden]="password.valid || password.pristine"
+              class="alert alert-danger" style="color: white">
+              Password is required
+            </div>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="button" fxFlex>
+      <button type="submit" mat-raised-button color="primary" [disabled]="!loginForm.form.valid">Login</button>
+    </div>
+    <div class="button" fxFlex>
+      <button mat-raised-button color="primary" routerLink="/register">Register</button>
     </div>
   </div>
-  <div fxFlex fxFlexAlign="center">
-    <button mat-raised-button color="primary" routerLink="/messages">Login</button>
-
-    <button mat-raised-button color="primary" routerLink="/register">Register</button>
-  </div>
-</div>
+</form>

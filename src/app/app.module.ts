@@ -18,6 +18,7 @@ import { AdvisorRegistrationComponent } from './advisor-registration/advisor-reg
 import { DigitOnlyModule } from '@uiowa/digit-only';
 import { MessageSelectorComponent } from './message-selector/message-selector.component';
 import { NewCaseComponent } from './new-case/new-case.component';
+import { MessageComponent } from './message/message.component';
 
 const appRoutes: Routes = [
   { path: '',
@@ -45,8 +46,12 @@ const appRoutes: Routes = [
     component: AdvisorRegistrationComponent
   },
   {
-    path: 'messages',
+    path: 'messages/:type',
     component: MessageSelectorComponent
+  },
+  {
+    path: 'message',
+    component: MessageComponent
   },
   {
     path: 'newCase',
@@ -62,7 +67,8 @@ const appRoutes: Routes = [
     ClientRegistrationComponent,
     AdvisorRegistrationComponent,
     MessageSelectorComponent,
-    NewCaseComponent
+    NewCaseComponent,
+    MessageComponent
   ],
   imports: [
     RouterModule.forRoot(

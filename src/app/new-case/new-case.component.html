@@ -2,34 +2,51 @@
   <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.5%" fxLayoutAlign="center center">
     <h2 style="text-align: center; margin-top: 5px;">What area of family law are you interested in?</h2>
     <div fxFill fxFlexAlign="center" style="text-align: center;">
-      <button class="button" mat-raised-button color="primary" (click)="onClick()">Divorce</button>
+      <button class="button" mat-raised-button color="primary" (click)="onFirstClick()">Divorce</button>
       <div></div>
-      <button class="button" mat-raised-button color="primary" (click)="onClick()">Separation</button>
+      <button class="button" mat-raised-button color="primary" (click)="onFirstClick()">Separation</button>
       <div></div>
-      <button class="button" mat-raised-button color="primary" (click)="onClick()">Child custody</button>
+      <button class="button" mat-raised-button color="primary" (click)="onFirstClick()">Child custody</button>
       <div></div>
-      <button class="button" mat-raised-button color="primary" (click)="onClick()">Marriage</button>
+      <button class="button" mat-raised-button color="primary" (click)="onFirstClick()">Marriage</button>
       <div></div>
-      <button class="button" mat-raised-button color="primary" (click)="onClick()">Adoption</button>
+      <button class="button" mat-raised-button color="primary" (click)="onFirstClick()">Adoption</button>
       <div></div>
-      <button class="button" mat-raised-button color="primary" (click)="onClick()">Domestic violence</button>
+      <button class="button" mat-raised-button color="primary" (click)="onFirstClick()">Domestic violence</button>
     </div>
   </div>
 </div>
 
-<div *ngIf="firstQuestionAnswered">
+<div *ngIf="firstQuestionAnswered && !secondQuestionAnswered">
   <h2 style="text-align: center; margin-top: 5px;">What are your grounds for divorce?</h2>
   <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.5%" fxLayoutAlign="center center">
     <div fxFlex fxFlexAlign="center" style="text-align: center;">
-      <button class="button" mat-raised-button color="primary" (click)="onClick()">Adultery</button>
+      <button class="button" mat-raised-button color="primary" (click)="onSecondClick()">Adultery</button>
       <div></div>
-      <button class="button" mat-raised-button color="primary" (click)="onClick()">Unreasonable behaviour</button>
+      <button class="button" mat-raised-button color="primary" (click)="onSecondClick()">Unreasonable behaviour</button>
       <div></div>
-      <button class="button" mat-raised-button color="primary" (click)="onClick()">Desertion</button>
+      <button class="button" mat-raised-button color="primary" (click)="onSecondClick()">Desertion</button>
       <div></div>
-      <button class="button" mat-raised-button color="primary" (click)="onClick()">2 year separation</button>
+      <button class="button" mat-raised-button color="primary" (click)="onSecondClick()">2 year separation</button>
       <div></div>
-      <button class="button" mat-raised-button color="primary" (click)="onClick()">5 year separation</button>
+      <button class="button" mat-raised-button color="primary" (click)="onSecondClick()">5 year separation</button>
     </div>
   </div>
 </div>
+
+<div *ngIf="secondQuestionAnswered">
+  <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.5%" fxLayoutAlign="center center">
+    <h2 style="text-align: center; margin-top: 5px;">Your case summary has been created!</h2>
+    <div fxFlex fxFlexAlign="center" style="text-align: center;">
+      <a style="color:white;" download="CaseSummary" href="assets/textFiles/Case_Summary.pdf">Download here</a><br>
+
+      <a style="color:white;" download="CaseSummary" href="https://www.google.com/">Download here</a>
+    </div>
+    <h2 style="text-align: center; margin-top: 5px;">You will be notified once your case has been assigned to a lawyer.</h2>
+    <div fxFlex fxFlexAlign="center" style="text-align: center;">
+      <button class="button" mat-raised-button color="primary" routerLink="/messages/clientPending">Return to messages</button>
+    </div>
+  </div>
+
+</div>
+

@@ -1,0 +1,23 @@
+
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.5%" fxLayoutAlign="center center">
+  <h2 style="text-align: center; margin-top: 15px;">Your messages</h2>
+
+  <div fxFill class="messageArea" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+    <mat-card class="card message" [ngClass]="{'theirMessage': message.name == 'Lawyer', 'myMessage': message.name == 'Donald'}"  *ngFor="let message of messages">
+      <mat-card-content class="content">
+      <p>{{ message.message }}</p>
+      </mat-card-content>
+      <mat-card-footer class="footer">
+        {{ message.name }}: {{message.time}}
+      </mat-card-footer>
+    </mat-card>
+  </div>
+
+  <form (ngSubmit)="onSubmit()" #messageForm="ngForm" style="width: 100%;">
+    <div fxFlex fxLayoutAlign="center end" style="text-align: center;">
+      <mat-form-field style="width: 100%;">
+        <input matInput type="text" id="Message" placeholder="Type a message here" [(ngModel)]="model.message" name="message" #message="ngModel">
+      </mat-form-field>
+    </div>
+  </form>
+</div>

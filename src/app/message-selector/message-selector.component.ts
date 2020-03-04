@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router  , ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-message-selector',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageSelectorComponent implements OnInit {
 
-  constructor() { }
+  typeVal = '';
+
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    console.log(this.route.snapshot.params);
+    this.typeVal = this.route.snapshot.params['type'];
   }
-
 }

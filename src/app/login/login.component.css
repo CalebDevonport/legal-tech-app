@@ -1,10 +1,12 @@
 .img {
   width: 99%;
+  margin: 0px;
 }
 .container {
   min-height: 100%;
   min-width: 100%;
 }
+
 .search-form {
   min-width: 100%;
 }
@@ -25,4 +27,8 @@
 .mat-raised-button {
   width: 90%;
   margin: 10px;
+}
+
+.button {
+  width: 40%;
 }

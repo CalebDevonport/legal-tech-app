@@ -19,3 +19,9 @@
 .mat-form-field {
   margin: 10px;
 }
+
+.component {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
