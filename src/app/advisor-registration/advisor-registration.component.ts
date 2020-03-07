@@ -13,19 +13,19 @@ export class AdvisorRegistrationComponent {
   @ViewChild('advisorForm') public advisorForm: NgForm;
 
   formSubmitted = false;
-
-  advisorList: Advisor[] = [];
+  sraID = null;
 
   model = new Advisor(1, '', '', '', '', UserType.Advisor, null);
 
   constructor() { }
 
   onSubmit() {
-    this.advisorList.push(this.model);
-    const newClientNum = this.advisorList.sort()[this.advisorList.length - 1].id + 1;
-    this.model = new Advisor(newClientNum, '', '', '', '', UserType.Advisor, null);
-    this.advisorForm.resetForm(this.model);
+    this.sraID = this.model.sraID;
     this.formSubmitted = true;
+  }
+
+  reRegister() {
+    this.formSubmitted = false;
   }
 
 }

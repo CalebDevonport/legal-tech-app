@@ -60,17 +60,26 @@
         </div>
       </div>
       <div fxFlex fxFlexAlign="center">
-        <button type="submit" mat-raised-button color="primary" [disabled]="!advisorForm.form.valid" routerLink="messages">Create Account</button>
+        <button type="submit" mat-raised-button color="primary" [disabled]="!advisorForm.form.valid">Create Account</button>
       </div>
     </div>
   </form>
 </div>
 
-<div *ngIf="formSubmitted" class="container" fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.5%" fxLayoutAlign="center center">
+<div *ngIf="formSubmitted && sraID.value > 200000" class="container" fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.5%" fxLayoutAlign="center center">
   <div fxFlex="50"></div>
   <div fxFlexAlign="center" style="text-align: center;">
     <h2>Please check your emails to confirm your identity.</h2>
     <button mat-raised-button color="primary" routerLink="/login">Continue</button>
+  </div>
+  <div fxFlex="50"></div>
+</div>
+
+<div *ngIf="formSubmitted && sraID.value < 200000" class="container" fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.5%" fxLayoutAlign="center center">
+  <div fxFlex="50"></div>
+  <div fxFlexAlign="center" style="text-align: center;">
+    <h2>We couldn't find a registered lawyer with that SRA ID. Please check your details and resubmit.</h2>
+    <button mat-raised-button color="primary" (click)="reRegister()">Continue</button>
   </div>
   <div fxFlex="50"></div>
 </div>

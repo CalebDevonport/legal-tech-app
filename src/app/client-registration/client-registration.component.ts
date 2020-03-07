@@ -14,17 +14,11 @@ export class ClientRegistrationComponent {
 
   formSubmitted = false;
 
-  clientList: User[] = [];
-
   model = new User(1, '', '', '', '', UserType.Client);
 
   constructor() { }
 
   onSubmit() {
-    this.clientList.push(this.model);
-    const newClientNum = this.clientList.sort()[this.clientList.length - 1].id + 1;
-    this.model = new User(newClientNum, '', '', '', '', UserType.Client);
-    this.clientForm.resetForm(this.model);
     this.formSubmitted = true;
   }
 }
