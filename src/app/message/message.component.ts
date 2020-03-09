@@ -12,12 +12,16 @@ export class MessageComponent implements OnInit {
 
   @ViewChild('messageForm') public messageForm: NgForm;
 
+  firstMessageSent = false;
+
   messages = [];
-  name = 'Lawyer';
+  name = 'David';
 
   model = {
     message: ''
   };
+
+  returnMessages = ['I am not sure if I can get him to agree. What if he does not agree?', 'Okay, what do you mean by mediation?']
 
   constructor(private changeDetectorRef: ChangeDetectorRef) {
     this.messages = chatMessages;
@@ -45,14 +49,22 @@ export class MessageComponent implements OnInit {
 
     this.changeDetectorRef.detectChanges();
 
-    data = {
-      message: 'I\'ll have a think and get back to you, thanks for your help!',
+    let returnMessage = {
+      message: '',
       name: 'Debbie',
       time : date.getHours() + ':' + (date.getMinutes() < 10 ? '0' : '') + date.getMinutes()
     };
 
+    if (this.firstMessageSent) {
+      returnMessage.message = this.returnMessages[1];
+    } else {
+      returnMessage.message = this.returnMessages[0];
+    }
+
+    this.firstMessageSent = true;
+
     setTimeout(() => {
-      this.messages = [...this.messages , data];
+      this.messages = [...this.messages , returnMessage];
       this.changeDetectorRef.detectChanges();
     }, 2000);
   }

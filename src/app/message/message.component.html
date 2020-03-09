@@ -6,7 +6,7 @@
     <div fxFlexAlign="center" style="text-align: center;">
       <a style="color:white;" download="CaseSummary" href="assets/textFiles/Case_Summary.pdf">Download case summary here</a>
     </div>
-    <mat-card class="card message" [ngClass]="{'theirMessage': message.name == 'Callum', 'myMessage': message.name == 'Lawyer'}"  *ngFor="let message of messages">
+    <mat-card class="card message" [ngClass]="{'theirMessage': message.name == 'Debbie', 'myMessage': message.name == 'David'}"  *ngFor="let message of messages">
       <mat-card-content class="content">
       <p>{{ message.message }}</p>
       </mat-card-content>

@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  advisor = 'lawyer.lawyerman@outlook.com';
+  advisor = 'david.paulsen@outlook.com';
   client = 'debbie.unsworth@gmail.com';
 
   @ViewChild('loginForm') public loginForm: NgForm;
